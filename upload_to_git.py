@@ -57,3 +57,6 @@ y = sum([i for i in range(5)]); print(f'Sum: {y}')
 
 # Auto-update tweak
 x = random.randint(1, upper_bound); print(f'Random X: {x}')
+
+# Self-learning script
+import time; print(f'Time now: {time.time()}')
