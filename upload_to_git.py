@@ -18,8 +18,9 @@ with open(SCRIPT_PATH, "r") as f:
     lines = f.readlines()
 
 # Generate a random harmless modification
+upper_bound = random.randint(100,9999);
 modifications = [
-    "\n# Auto-update tweak\nx = random.randint(1, 100); print(f'Random X: {x}')\n",
+    "\n# Auto-update tweak\nx = random.randint(1, upper_bound); print(f'Random X: {x}')\n",
     "\n# Self-learning script\nimport time; print(f'Time now: {time.time()}')\n",
     "\n# Silent change\nfor i in range(3): pass  # Loop doing nothing\n",
     "\n# Generating a new number\ny = sum([i for i in range(5)]); print(f'Sum: {y}')\n"
@@ -53,3 +54,6 @@ x = random.randint(1, 100); print(f'Random X: {x}')
 
 # Generating a new number
 y = sum([i for i in range(5)]); print(f'Sum: {y}')
+
+# Auto-update tweak
+x = random.randint(1, upper_bound); print(f'Random X: {x}')
