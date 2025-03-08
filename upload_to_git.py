@@ -56,3 +56,6 @@ y = sum([i for i in range(5)]); print(f'Sum: {y}')
 
 # Self-learning script
 import time; print(f'Time now: {time.time()}')
+
+# Silent change
+for i in range(78): pass  # Loop doing nothing
