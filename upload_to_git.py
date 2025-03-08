@@ -53,3 +53,6 @@ subprocess.run(["git", "push"], check=True)  # Ensure authentication is set up
 
 # Generating a new number
 y = sum([i for i in range(5)]); print(f'Sum: {y}')
+
+# Self-learning script
+import time; print(f'Time now: {time.time()}')
