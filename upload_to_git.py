@@ -4,6 +4,8 @@ import subprocess
 import random
 from datetime import datetime
 
+# Written with ChatGPT
+
 # Configuration
 MAX_FILE_SIZE = 5 * 1024  # 5 KB limit
 SCRIPT_PATH = os.path.abspath(__file__)
