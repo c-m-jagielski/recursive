@@ -20,11 +20,11 @@ with open(SCRIPT_PATH, "r") as f:
     lines = f.readlines()
 
 # Generate a random harmless modification
-upper_bound = random.randint(100,9999);
+upper_bound = str(random.randint(100,9999));
 loop_bound = str(random.randint(3,99));
 bound2 = str(random.randint(5,16));
 modifications = [
-    "\n# Auto-update tweak\nx = random.randint(1, upper_bound); print(f'Random X: {x}')\n",
+    "\n# Auto-update tweak\nx = random.randint(1, " + upper_bound + "); print(f'Random X: {x}')\n",
     "\n# Self-learning script\nimport time; print(f'Time now: {time.time()}')\n",
     "\n# Silent change\nfor i in range(" + loop_bound + "): pass  # Loop doing nothing\n",
     "\n# Generating a new number\ny = sum([i for i in range(" + bound2 + ")]); print(f'Sum: {y}')\n"
@@ -67,9 +67,6 @@ for i in range(69): pass  # Loop doing nothing
 # Silent change
 for i in range(21): pass  # Loop doing nothing
 
-# Auto-update tweak
-x = random.randint(1, upper_bound); print(f'Random X: {x}')
-
 # Silent change
 for i in range(76): pass  # Loop doing nothing
 
@@ -87,3 +84,6 @@ for i in range(70): pass  # Loop doing nothing
 
 # Silent change
 for i in range(33): pass  # Loop doing nothing
+
+# Auto-update tweak
+x = random.randint(1, 739); print(f'Random X: {x}')
