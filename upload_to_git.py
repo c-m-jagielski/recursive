@@ -21,10 +21,11 @@ with open(SCRIPT_PATH, "r") as f:
 
 # Generate a random harmless modification
 upper_bound = random.randint(100,9999);
+loop_bound = random.randint(3,99);
 modifications = [
     "\n# Auto-update tweak\nx = random.randint(1, upper_bound); print(f'Random X: {x}')\n",
     "\n# Self-learning script\nimport time; print(f'Time now: {time.time()}')\n",
-    "\n# Silent change\nfor i in range(3): pass  # Loop doing nothing\n",
+    "\n# Silent change\nfor i in range(loop_bound): pass  # Loop doing nothing\n",
     "\n# Generating a new number\ny = sum([i for i in range(5)]); print(f'Sum: {y}')\n"
 ]
 
@@ -35,6 +36,7 @@ if new_code.strip() not in "".join(lines):
     lines.append(new_code)
 else:
     print("No new change needed. Avoiding redundant modification.")
+    print(new_code)
     sys.exit(0)
 
 # Write back modified script
@@ -62,3 +64,6 @@ x = random.randint(1, upper_bound); print(f'Random X: {x}')
 
 # Self-learning script
 import time; print(f'Time now: {time.time()}')
+
+# Silent change
+for i in range(loop_bound): pass  # Loop doing nothing
