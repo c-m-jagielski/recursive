@@ -21,11 +21,11 @@ with open(SCRIPT_PATH, "r") as f:
 
 # Generate a random harmless modification
 upper_bound = random.randint(100,9999);
-loop_bound = random.randint(3,99);
+loop_bound = str(random.randint(3,99));
 modifications = [
     "\n# Auto-update tweak\nx = random.randint(1, upper_bound); print(f'Random X: {x}')\n",
     "\n# Self-learning script\nimport time; print(f'Time now: {time.time()}')\n",
-    "\n# Silent change\nfor i in range(loop_bound): pass  # Loop doing nothing\n",
+    "\n# Silent change\nfor i in range(" + loop_bound + "): pass  # Loop doing nothing\n",
     "\n# Generating a new number\ny = sum([i for i in range(5)]); print(f'Sum: {y}')\n"
 ]
 
@@ -50,20 +50,6 @@ subprocess.run(["git", "commit", "-m", commit_message], check=True)
 subprocess.run(["git", "push"], check=True)  # Ensure authentication is set up
 
 
-# Silent change
-for i in range(3): pass  # Loop doing nothing
-
-# Auto-update tweak
-x = random.randint(1, 100); print(f'Random X: {x}')
 
 # Generating a new number
 y = sum([i for i in range(5)]); print(f'Sum: {y}')
-
-# Auto-update tweak
-x = random.randint(1, upper_bound); print(f'Random X: {x}')
-
-# Self-learning script
-import time; print(f'Time now: {time.time()}')
-
-# Silent change
-for i in range(loop_bound): pass  # Loop doing nothing
