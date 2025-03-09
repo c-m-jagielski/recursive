@@ -42,6 +42,7 @@ else:
 
 # Generate a unique branch name based on timestamp
 branch_name = f"update-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+print(branch_name)
 
 # Create and switch to the new branch
 subprocess.run(["git", "checkout", "-b", branch_name], check=True)
@@ -66,11 +67,12 @@ subprocess.run(["git", "checkout", "main"], check=True)
 # Merge the temporary branch into main
 subprocess.run(["git", "merge", branch_name], check=True)
 
-#subprocess.run(["git", "push"], check=True)  # Ensure authentication is set up
+# Push the merges to main
+subprocess.run(["git", "push"], check=True)  # Ensure authentication is set up
 
 # Delete the temporary branch locally and remotely
-#subprocess.run(["git", "branch", "-d", branch_name], check=True)
-#subprocess.run(["git", "push", "origin", "--delete", branch_name], check=True)
+subprocess.run(["git", "branch", "-d", branch_name], check=True)
+subprocess.run(["git", "push", "origin", "--delete", branch_name], check=True)
 
 
 # Generating a new number
@@ -120,3 +122,6 @@ x = random.randint(1, 2796); print(f'Random X: {x}')
 
 # Silent change
 for i in range(34): pass  # Loop doing nothing
+
+# Silent change
+for i in range(55): pass  # Loop doing nothing
