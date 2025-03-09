@@ -42,7 +42,6 @@ else:
 
 # Generate a unique branch name based on timestamp
 branch_name = f"update-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
-print(branch_name)
 
 # Create and switch to the new branch
 subprocess.run(["git", "checkout", "-b", branch_name], check=True)
@@ -125,3 +124,6 @@ for i in range(34): pass  # Loop doing nothing
 
 # Silent change
 for i in range(55): pass  # Loop doing nothing
+
+# Generating a new number
+y = sum([i for i in range(14)]); print(f'Sum: {y}')
