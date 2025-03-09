@@ -40,16 +40,37 @@ else:
     print(new_code)
     sys.exit(0)
 
+# Generate a unique branch name based on timestamp
+branch_name = f"update-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+
+# Create and switch to the new branch
+subprocess.run(["git", "checkout", "-b", branch_name], check=True)
+
 # Write back modified script
 with open(SCRIPT_PATH, "w") as f:
     f.writelines(lines)
 
-# Git commands
+# Stage the updated file
 subprocess.run(["git", "add", SCRIPT_PATH], check=True)
+
+# Commit the changes with a timestamped message
 commit_message = f"Automated self-update with randomness on {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}"
 subprocess.run(["git", "commit", "-m", commit_message], check=True)
-subprocess.run(["git", "push"], check=True)  # Ensure authentication is set up
 
+# Push the branch to remote
+subprocess.run(["git", "push", "-u", "origin", branch_name], check=True)
+
+# Switch back to main branch
+subprocess.run(["git", "checkout", "main"], check=True)
+
+# Merge the temporary branch into main
+subprocess.run(["git", "merge", branch_name], check=True)
+
+#subprocess.run(["git", "push"], check=True)  # Ensure authentication is set up
+
+# Delete the temporary branch locally and remotely
+#subprocess.run(["git", "branch", "-d", branch_name], check=True)
+#subprocess.run(["git", "push", "origin", "--delete", branch_name], check=True)
 
 
 # Generating a new number
@@ -96,3 +117,6 @@ x = random.randint(1, 626); print(f'Random X: {x}')
 
 # Auto-update tweak
 x = random.randint(1, 2796); print(f'Random X: {x}')
+
+# Silent change
+for i in range(34): pass  # Loop doing nothing
