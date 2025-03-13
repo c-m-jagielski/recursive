@@ -3,6 +3,7 @@ import sys
 import subprocess
 import random
 from datetime import datetime
+import time
 
 # Written with ChatGPT
 
@@ -25,7 +26,7 @@ loop_bound = str(random.randint(3,99));
 bound2 = str(random.randint(5,16));
 modifications = [
     "\n# Auto-update tweak\nx = random.randint(1, " + upper_bound + "); print(f'Random X: {x}')\n",
-    "\n# Self-learning script\nimport time; print(f'Time now: {time.time()}')\n",
+    "\n# Self-learning script\nprint(f'Time now: {time.time()}')\n",
     "\n# Silent change\nfor i in range(" + loop_bound + "): pass  # Loop doing nothing\n",
     "\n# Generating a new number\ny = sum([i for i in range(" + bound2 + ")]); print(f'Sum: {y}')\n"
 ]
@@ -133,3 +134,6 @@ for i in range(71): pass  # Loop doing nothing
 
 # Auto-update tweak
 x = random.randint(1, 542); print(f'Random X: {x}')
+
+# Silent change
+for i in range(68): pass  # Loop doing nothing
