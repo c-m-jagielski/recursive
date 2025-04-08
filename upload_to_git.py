@@ -140,3 +140,6 @@ for i in range(28): pass  # Loop doing nothing
 
 # Silent change
 for i in range(31): pass  # Loop doing nothing
+
+# Generating a new number
+y = sum([i for i in range(12)]); print(f'Sum: {y}')
