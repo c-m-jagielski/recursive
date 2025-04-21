@@ -167,3 +167,6 @@ for i in range(3): pass  # Loop doing nothing
 
 # Silent change
 for i in range(94): pass  # Loop doing nothing
+
+# Generating a new number
+y = sum([i for i in range(5)]); print(f'Sum: {y}')
