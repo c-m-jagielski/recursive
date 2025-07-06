@@ -80,3 +80,6 @@ for i in range(31): pass  # Loop doing nothing
 
 # Auto-update tweak
 x = random.randint(1, 9955); print(f'Random X: {x}')
+
+# Generating a new number
+y = sum([i for i in range(14)]); print(f'Sum: {y}')
