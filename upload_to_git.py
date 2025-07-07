@@ -83,3 +83,6 @@ x = random.randint(1, 9955); print(f'Random X: {x}')
 
 # Generating a new number
 y = sum([i for i in range(14)]); print(f'Sum: {y}')
+
+# Generating a new number
+y = sum([i for i in range(5)]); print(f'Sum: {y}')
