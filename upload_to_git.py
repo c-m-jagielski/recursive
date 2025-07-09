@@ -98,3 +98,6 @@ for i in range(58): pass  # Loop doing nothing
 
 # Silent change
 for i in range(30): pass  # Loop doing nothing
+
+# Generating a new number
+y = sum([i for i in range(15)]); print(f'Sum: {y}')
