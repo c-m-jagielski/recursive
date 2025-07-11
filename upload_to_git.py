@@ -104,3 +104,6 @@ y = sum([i for i in range(15)]); print(f'Sum: {y}')
 
 # Silent change
 for i in range(66): pass  # Loop doing nothing
+
+# Generating a new number
+y = sum([i for i in range(7)]); print(f'Sum: {y}')
