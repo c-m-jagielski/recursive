@@ -155,3 +155,6 @@ x = random.randint(1, 814); print(f'Random X: {x}')
 
 # Generating a new number
 y = sum([i for i in range(6)]); print(f'Sum: {y}')
+
+# Silent change
+for i in range(41): pass  # Loop doing nothing
