@@ -227,3 +227,6 @@ x = random.randint(1, 8318); print(f'Random X: {x}')
 
 # Auto-update tweak
 x = random.randint(1, 4921); print(f'Random X: {x}')
+
+# Generating a new number
+y = sum([i for i in range(8)]); print(f'Sum: {y}')
