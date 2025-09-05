@@ -248,3 +248,6 @@ x = random.randint(1, 3026); print(f'Random X: {x}')
 
 # Auto-update tweak
 x = random.randint(1, 8899); print(f'Random X: {x}')
+
+# Generating a new number
+y = sum([i for i in range(13)]); print(f'Sum: {y}')
